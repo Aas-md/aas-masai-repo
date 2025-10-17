@@ -1,0 +1,15 @@
+li:first-of-type{
+    font-weight: bold;
+}
+
+li:first-of-type + li{
+    background-color: red;
+}
+
+li:nth-child(3){
+    font-style: italic;
+}
+
+li:hover{
+    color: magenta;
+}
