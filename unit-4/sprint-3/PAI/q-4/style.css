@@ -56,6 +56,7 @@ img{
     justify-content: space-between;
     /* box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.2); */
     transition: all 1s;
+    padding-bottom: 10px;
     
 }
 
@@ -64,4 +65,11 @@ img{
     transform: scaleY(1.2);
     
     /* background-color: red; */
+}
+
+@media(max-width:400px){
+    .cards{
+        flex-direction: column;
+        
+    }
 }
