@@ -1,0 +1,22 @@
+header{
+    background-color: pink;
+    padding: 20px;
+    border: 1px solid black;
+    position: sticky;
+    top: 0;
+}
+
+main{
+    margin: 20px 10px;
+}
+
+footer{
+    background-color: lightgray;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    /* fixed bottom karne ke bad ye inline behave kar raha tha that is why I gave 100vp width */
+    width: 100%;
+}

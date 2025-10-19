@@ -1,0 +1,22 @@
+.box{
+    background-color: pink;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.block{
+    display: block;
+}
+
+.inline{
+    display: inline;
+}
+
+.inline-block{
+    display: inline-block;
+}
+.none{
+    display: none;
+}
