@@ -1,0 +1,17 @@
+.container{
+    height: 600px;
+    width: 400px;
+    border: 1px solid black;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items{
+    background-color: pink;
+    border: 1px solid black;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+}
