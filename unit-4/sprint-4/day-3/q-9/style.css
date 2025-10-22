@@ -1,0 +1,23 @@
+.box1{background-color: red;}
+.box2{background-color: green;}
+.box3{background-color: blue;}
+.box4{background-color: magenta;}
+.box5{background-color: yellow;}
+.box6{background-color: pink;}
+.box7{background-color: lightblue;}
+.box8{background-color: lightgreen;}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-row: auto;
+    gap: 1rem;
+}
+
+.box{
+   
+    height : 10rem;
+    text-align: center; 
+  
+}
+
