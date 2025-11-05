@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeStore Product Listing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>🛍️ FakeStore Product Listing</h2>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search products..." />
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+    </select>
+    <select id="sort">
+      <option value="">Sort by</option>
+      <option value="asc">Price: Low → High</option>
+      <option value="desc">Price: High → Low</option>
+    </select>
+  </div>
+
+  <div id="product-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
