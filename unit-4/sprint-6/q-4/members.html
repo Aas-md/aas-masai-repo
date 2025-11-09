@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library – Members</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./js/members.js"></script>
+</head>
+
+<body>
+  <h2>Members</h2>
+
+  <!-- Filters -->
+  <input id="search" placeholder="Search name/email">
+  <button id="apply">Apply</button>
+
+  <!-- Add Member -->
+  <h3>Add Member</h3>
+  <input id="m_name" placeholder="Name">
+  <input id="m_email" placeholder="Email">
+  <button id="addMember">Add</button>
+
+  <!-- Table -->
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="mBody"></tbody>
+  </table>
+
+  <br><br>
+  <a href="index.html">Go to Books</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novels List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC5yXFIjscmHgq8KYj6-IqO7D4mdOK1mdw",
+            authDomain: "all-projects-b2ef9.firebaseapp.com",
+            projectId: "all-projects-b2ef9",
+            storageBucket: "all-projects-b2ef9.firebasestorage.app",
+            messagingSenderId: "224874412019",
+            appId: "1:224874412019:web:72d6341641b4804411c486",
+            measurementId: "G-RME6Y98C4M"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        window.db = getFirestore(app);
+    </script>
+
+    <!-- ✅ App Logic -->
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+
+    <h2>📚 Novel Library</h2>
+
+    <!-- ✅ Search -->
+    <input id="search" placeholder="Search by title or author">
+
+    <!-- ✅ Filter -->
+    <input id="yearMin" type="number" placeholder="Min Year">
+    <input id="yearMax" type="number" placeholder="Max Year">
+
+    <!-- ✅ Sorting -->
+    <select id="sortPrice">
+        <option value="">Sort by Price</option>
+        <option value="asc">Price: Low → High</option>
+        <option value="desc">Price: High → Low</option>
+    </select>
+
+    <button id="apply">Apply Filters</button>
+
+    <!-- ✅ Novels Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price ($)</th>
+                <th>Year</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    
+
+
+</body>
+</html>
