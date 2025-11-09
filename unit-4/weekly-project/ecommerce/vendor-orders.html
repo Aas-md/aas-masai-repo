@@ -1,0 +1,35 @@
+<!-- vendor-orders.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/vendor-orders.css" />
+  <title>Vendor Orders</title>
+</head>
+<body>
+  <header>
+    <a href="vendor-dashboard.html">Dashboard</a>
+    <a href="index.html">Storefront</a>
+    <button onclick="handleLogout()">Logout</button>
+  </header>
+
+  <h2>Incoming Orders (MVP)</h2>
+  <p style="color:#b00;font-size:13px">
+    NOTE: MVP me vendor-wise filter simplify kiya hai. Phase-2 me orders ko per-vendor filter karenge.
+  </p>
+
+  <div id="vendor-orders"></div>
+
+  <script type="module">
+    import { requireAuth, getRole } from "../js/utils.js";
+    import { handleLogout } from "../js/auth.js";
+    import { loadVendorOrders } from "../js/orders.js";
+
+    requireAuth();
+    if (getRole() !== "vendor") window.location.href = "./index.html";
+    window.handleLogout = handleLogout;
+
+    loadVendorOrders("#vendor-orders");
+  </script>
+</body>
+</html>

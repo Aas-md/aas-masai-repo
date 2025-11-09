@@ -1,0 +1,29 @@
+<!-- customer-orders.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/customer-orders.css" />
+  <title>My Orders</title>
+</head>
+<body>
+  <header>
+    <a href="index.html">Storefront</a>
+    <button onclick="handleLogout()">Logout</button>
+  </header>
+
+  <h2>Your Orders</h2>
+  <div id="orders"></div>
+
+  <script type="module">
+    import { requireAuth } from "../js/utils.js";
+    import { handleLogout } from "../js/auth.js";
+    import { loadMyOrders } from "../js/orders.js";
+
+    requireAuth();
+    window.handleLogout = handleLogout;
+
+    loadMyOrders("#orders");
+  </script>
+</body>
+</html>

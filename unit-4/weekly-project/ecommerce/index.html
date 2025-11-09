@@ -1,0 +1,84 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/index.css" />
+
+    <title>Storefront</title>
+    <style>
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        header a {
+            margin-right: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <a href="customer-orders.html">My Orders</a>
+        <a href="vendor-orders.html">Vendor</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+        <button onclick="handleLogout()">Logout</button>
+    </header>
+
+    <h2>Products</h2>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0">
+        <input id="q" placeholder="Search name/category" />
+        <select id="cat">
+            <option value="all">All Categories</option>
+            <option>Clothing</option>
+            <option>Electronics</option>
+            <option>Home</option>
+            <option>Books</option>
+        </select>
+        <input id="min" type="number" placeholder="Min Price" style="width:120px" />
+        <input id="max" type="number" placeholder="Max Price" style="width:120px" />
+        <button id="apply">Apply</button>
+    </div>
+
+    <div id="product-list" class="grid"></div>
+
+    <hr>
+    <h3>Cart</h3>
+    <div id="cart"></div>
+    <div><strong>Total:</strong> <span id="cart-total">₹0</span></div>
+    <button onclick="checkout()">Proceed to Checkout</button>
+
+    <script type="module">
+        import "../js/firebase.js";
+        import { handleLogout } from "../js/auth.js";
+        import { loadProducts } from "../js/products.js";
+        import { renderCart } from "../js/cart.js";
+
+        window.handleLogout = handleLogout;
+
+        const apply = () => {
+            loadProducts({
+                mount: "#product-list",
+                search: document.querySelector("#q").value,
+                category: document.querySelector("#cat").value,
+                min: document.querySelector("#min").value,
+                max: document.querySelector("#max").value
+            });
+            renderCart("#cart");
+        };
+
+        document.querySelector("#apply").onclick = apply;
+
+        // initial
+        apply();    
+    </script>
+    <script type="module" src="../js/cart.js"></script>
+</body>
+
+</html>

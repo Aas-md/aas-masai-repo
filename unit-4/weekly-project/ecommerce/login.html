@@ -1,0 +1,24 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/login.css" />
+
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form onsubmit="handleLogin(event)">
+    <input id="li-email" type="email" placeholder="Email" required /><br><br>
+    <input id="li-pass" type="password" placeholder="Password" required /><br><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>No account? <a href="signup.html">Signup</a></p>
+
+  <script type="module">
+    import { handleLogin } from "../js/auth.js";
+    window.handleLogin = handleLogin;
+  </script>
+</body>
+</html>

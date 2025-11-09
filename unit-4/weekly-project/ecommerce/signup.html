@@ -1,0 +1,29 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/signup.css" />
+  <title>Signup</title>
+</head>
+<body>
+  <h2>Signup</h2>
+  <form onsubmit="handleSignup(event)">
+    <input id="su-name" placeholder="Full Name" required /><br><br>
+    <input id="su-email" type="email" placeholder="Email" required /><br><br>
+    <input id="su-pass" type="password" placeholder="Password" required /><br><br>
+    <label>Role: </label>
+    <select id="su-role">
+      <option value="customer">Customer</option>
+      <option value="vendor">Vendor</option>
+    </select><br><br>
+    <button type="submit">Create Account</button>
+  </form>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+
+  <script type="module">
+    import { handleSignup } from "../js/auth.js";
+    window.handleSignup = handleSignup;
+  </script>
+</body>
+</html>

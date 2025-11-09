@@ -1,0 +1,32 @@
+/* css/vendor-orders.css */
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+
+#vendor-orders > div {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+#vendor-orders button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  margin-right: 5px;
+}
+
+header a, header button {
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+}

@@ -1,0 +1,52 @@
+<!-- vendor-dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/vendor-dashboard.css" />
+  <title>Vendor Dashboard</title>
+</head>
+<body>
+  <header>
+    <a href="index.html">Storefront</a>
+    <a href="vendor-orders.html">Orders</a>
+    <button onclick="handleLogout()">Logout</button>
+  </header>
+
+  <h2>Add Product</h2>
+  <div style="display:grid;gap:8px;max-width:420px">
+    <input id="p-name" placeholder="Name" />
+    <input id="p-price" type="number" placeholder="Price (₹)" />
+    <input id="p-category" placeholder="Category e.g. Clothing" />
+    <input id="p-image" placeholder="Image URL (static)" value="https://picsum.photos/seed/p1/600/400" />
+    <textarea id="p-desc" placeholder="Short description"></textarea>
+    <button id="add">Add Product</button>
+  </div>
+
+  <hr>
+  <h3>Your Products</h3>
+  <div id="vendor-products"></div>
+
+  <script type="module">
+    import { requireAuth } from "../js/utils.js";
+    import { handleLogout } from "../js/auth.js";
+    import { createProduct, loadVendorProducts } from "../js/products.js";
+
+    requireAuth(); // must be logged in
+    window.handleLogout = handleLogout;
+
+    document.querySelector("#add").onclick = async () => {
+      await createProduct({
+        name: document.querySelector("#p-name").value,
+        price: document.querySelector("#p-price").value,
+        category: document.querySelector("#p-category").value,
+        image: document.querySelector("#p-image").value,
+        description: document.querySelector("#p-desc").value
+      });
+      loadVendorProducts("#vendor-products");
+    };
+
+    loadVendorProducts("#vendor-products");
+  </script>
+</body>
+</html>
